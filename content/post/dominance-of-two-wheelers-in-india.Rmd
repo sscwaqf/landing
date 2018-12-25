@@ -1,0 +1,37 @@
+---
+title: Dominance of Two Wheelers in India
+date: 2018-06-28
+author: "Purza"
+tags: ["market"]
+categories: ["investor"]
+draft: false
+---
+
+```{r setup, eval=TRUE, include=FALSE, echo=FALSE, results="asis", message=FALSE, warning=FALSE, fig.cap=TRUE}
+library(tidyr)
+library(ggplot2)
+library(gsheet)
+library(plotrix)
+
+url <- 'https://docs.google.com/spreadsheets/d/16gWta6SLEbctd8wIO3NTqcZWOnl-Nu-fLCz4k1gh4xI/edit?usp=sharing'
+df <- gsheet2tbl(url) %>% as.data.frame
+df$Total <- rowSums(df[,4:47], na.rm=TRUE)
+df <- df[,-c(4:47)]
+colnames(df) <- c("Type", "Category", "SubCategory", "Total")
+bikes <- dplyr::filter(df, Type == "Transport + Non-transport" | SubCategory == "Total Two wheelers")
+num_all <- bikes$Total[nrow(bikes)]
+num_bike <- bikes$Total[nrow(bikes)-1]
+pct_bike <- round(100 * num_bike / num_all, 0)
+```
+
+## Two wheelers are `r pct_bike`% of all vehicles in India
+
+Two wheelers are `r pct_bike`% of all vehicles, in India and that's including all types of vehicles, including those used for transportation of goods.
+
+```{r eval=TRUE, include=TRUE, echo=FALSE, results="asis", message=FALSE, warning=FALSE, fig.cap="Source [data.gov.in](https://data.gov.in/resources/type-vehicles-wise-registered-motor-vehicles-million-plus-cities-india-31st-march2012#)"}
+mydata <- data.frame(group=c("Two Wheelers", "Other Vehicles"), FR=c(pct_bike, 100 - pct_bike))
+pie3D(mydata$FR, labels = mydata$group, main = "Share of Two Wheelers in India", explode=0.1, radius=.9, labelcex = 1.2,  start=0.7)
+```
+
+There were `r round(num_bike/1000000, 0)` million registered two wheelers, across 40 cities in India, in 2012. The data is not complete and it is missing numbers from important cities like Mumbai. Actual number of vehicles may be higher.
+

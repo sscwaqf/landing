@@ -1,0 +1,6 @@
+/public/
+/firebase/functions/lib/
+/firebase/functions/node_modules/
+/firebase/functions/serviceAccountKey.json
+/firebase/www/
+

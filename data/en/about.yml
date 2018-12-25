@@ -1,0 +1,13 @@
+enable  : true
+item    :
+  - positionRight : false
+    image : images/about/about-1.jpg
+    title : Vision
+    description : >
+      To provide opportunity to the youth of South Haryana to participate in the national mainstream through engagement with the government. Once they are aware of the avenues of jobs and entrepreneurship in the state and central government, it will be possible to achieve equitable participation in all walks of public life.
+
+  - positionRight : true
+    image : images/about/about-2.jpg
+    title : Mission
+    description : >
+      To establish top quality coaching centres and counselling services in South Haryana for SSC and other competitive examinations. The centres will reach out to youth and their parents and help them to know and prepare for suitable careers for them.

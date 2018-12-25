@@ -1,0 +1,11 @@
+<article class="card blog-post">
+    <header>
+        <h2 class="blog-post-title">
+            <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+        </h2>
+        {{ partial "post-date" . }}
+        {{ partial "post-tags" . }}
+        {{ partial "post-categories" . }}
+    </header>
+    {{ .Content }}
+</article>

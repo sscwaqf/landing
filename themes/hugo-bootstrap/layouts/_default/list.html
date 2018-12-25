@@ -1,0 +1,13 @@
+{{ define "main" }}
+	{{ $truncate := default true .Site.Params.truncate }}
+	<div class="card-deck">
+		{{ range .Paginator.Pages }}
+	    {{ if $truncate }}
+	        {{ .Render "summary" }}
+	    {{ else }}
+	        {{ .Render "content" }}
+	    {{ end }}
+		{{ end }}
+	</div>
+	{{ partial "paginator" . }}
+{{ end }}

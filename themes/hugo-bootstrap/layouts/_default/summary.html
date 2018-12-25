@@ -1,0 +1,23 @@
+<div class="card">
+	{{ with .Params.featured_image }}
+	<img src="{{ . }}" class="card-img-top img-thumbnail" alt="featured image">
+	{{ end }}
+	<div class="card-body">
+		<header class="card-header">
+			<h5 class="blog-post-title">
+			<a href="{{ .RelPermalink }}">
+			  {{ .Title | markdownify }}
+			</a>
+    	</h5>
+    	{{ partial "post-date" . }}
+		</header>
+		<p class="card-text">{{ .Summary }}</p>
+	</div>
+	{{ if .Truncated }}
+		<div class="card-footer text-muted">
+			<a href="{{ .RelPermalink }}" class="card-link">
+    		{{ i18n "readMore" }}
+			</a>
+		</div>
+	{{ end }}
+</div>
