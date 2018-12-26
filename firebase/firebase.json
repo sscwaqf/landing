@@ -9,7 +9,7 @@
     ]
   },
   "hosting": {
-    "public": "/scratch/waqf/landing",
+    "public": "www",
     "ignore": [
       "firebase.json",
       "**/.*",

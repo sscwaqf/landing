@@ -1,4 +1,4 @@
-baseURL = "https://example.org/"
+baseURL = "https://studywaqf.firebaseapp.com/"
 languageCode = "en-us"
 title = "Study Waqf | SSC Waqf Haryana"
 theme = "navigator-hugo"
