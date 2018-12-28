@@ -119,7 +119,7 @@ DefaultContentLanguage = "en"
         description = "To establish top quality coaching centres and counselling services in South Haryana for SSC and other competitive examinations. The centres will reach out to youth and their parents and help them to know and prepare for suitable careers for them."
         button  = true
         btnText = "Know More"
-        btnURL  = "https://example.com/"
+        btnURL  = "https://studywaqf.firebaseapp.com"
         videoThumb = "images/slider/video-player-thumb.jpg"
         videoURL   = "https://www.youtube.com/embed/_bGl1aHyq_8"
 
